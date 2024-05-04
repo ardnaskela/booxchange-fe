@@ -31,14 +31,14 @@ RUN npm run build
 FROM base AS runner
 
 ENV NODE_ENV production
-
-COPY --from=builder */app/refine/public ./public
+ 
+COPY --from=builder /app/refine/public* ./public
 
 RUN mkdir .next
 RUN chown refine:nodejs .next
 
-COPY --from=builder --chown=refine:nodejs /app/refine/.next/standalone ./
-COPY --from=builder --chown=refine:nodejs /app/refine/.next/static ./.next/static
+COPY --from=builder --chown=refine:nodejs /app/refine/.next/standalone* ./
+COPY --from=builder --chown=refine:nodejs /app/refine/.next/static* ./.next/static
 
 USER refine
 
