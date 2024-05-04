@@ -20,8 +20,6 @@ RUN \
   else echo "Lockfile not found." && exit 1; \
   fi
 
-FROM base AS builder
-
 COPY --from=deps /app/refine/node_modules ./node_modules
 
 COPY . .
@@ -32,13 +30,13 @@ FROM base AS runner
 
 ENV NODE_ENV production
  
-COPY --from=builder /app/refine/public* ./public
+COPY --from=deps /app/refine/public* ./public
 
 RUN mkdir .next
 RUN chown refine:nodejs .next
 
-COPY --from=builder --chown=refine:nodejs /app/refine/.next/standalone* ./
-COPY --from=builder --chown=refine:nodejs /app/refine/.next/static* ./.next/static
+COPY --from=deps --chown=refine:nodejs /app/refine/.next/standalone* ./
+COPY --from=deps --chown=refine:nodejs /app/refine/.next/static* ./.next/static
 
 USER refine
 
