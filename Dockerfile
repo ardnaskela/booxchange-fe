@@ -1,4 +1,11 @@
-FROM refinedev/node:18 AS base
+# Use the standard Node 18 Alpine image
+FROM node:18-alpine AS base
+
+# Create a non-root user 'refine' in 'nodejs' group
+RUN addgroup -S nodejs && adduser -S refine -G nodejs
+
+# Set /app/refine as the working directory
+WORKDIR /app/refine
 
 FROM base AS deps
 
