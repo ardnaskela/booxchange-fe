@@ -10,8 +10,6 @@ import React, { Suspense } from 'react';
 import { ColorModeContextProvider } from '@contexts/color-mode';
 import { authProvider } from '@providers/auth-provider';
 import { dataProvider } from '@providers/data-provider';
-import { MuiInferencer } from '@refinedev/inferencer/mui';
-import LoadingSpinner from '@components/loader';
 
 export const metadata: Metadata = {
     title: 'Refine',
