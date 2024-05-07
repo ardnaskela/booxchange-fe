@@ -10,7 +10,9 @@
         "build": "refine build",
         "start": "refine start",
         "lint": "eslint '**/*.{js,jsx,ts,tsx}'",
-        "refine": "refine"
+        "refine": "refine",
+        "clean": "rm -rf node_modules",
+        "reinstall": "npm run clean && npm install"
     },
     "dependencies": {
         "@emotion/react": "^11.8.2",
