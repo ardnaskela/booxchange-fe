@@ -58,6 +58,13 @@ export default function RootLayout({
                                                 edit: '/users/edit/:id',
                                                 show: '/users/show/:id',
                                             },
+                                            {
+                                                name: 'book-copies',
+                                                list: '/book-copies',
+                                                create: '/book-copies/create',
+                                                edit: '/book-copies/edit/:id',
+                                                show: '/book-copies/show/:id',
+                                            },
                                         ]}
                                         options={{
                                             syncWithLocation: true,

@@ -1,7 +1,7 @@
 'use client';
 
-import { UsersList } from '@components/users';
+import { UserList } from '@components/users';
 
 export default function UsersListPage() {
-    return <UsersList />;
+    return <UserList />;
 }
